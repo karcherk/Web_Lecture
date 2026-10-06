@@ -1,0 +1,46 @@
+body{
+    width: 780px;
+    margin: 0 auto;
+}
+
+.header{
+    overflow: hidden;
+    border-bottom: 2px solid black;
+}
+.header h2{
+    float:left;
+}
+.menu{
+    float:right;
+}
+.menu-item{
+    float:left;
+    margin:6px;
+}
+.container{
+    overflow: hidden;
+    margin-top: 20px;
+}
+.main_01{
+    float:left;
+    width: 65%;
+    padding: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+}
+.main_02{
+    float:left;
+    width: 30%;
+
+    margin-left: 3%;
+    padding: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+}
+.footer{
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid black;
+}
