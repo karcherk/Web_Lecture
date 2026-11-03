@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 선택 실습</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('title').style.color = 'blue';
+
+            document.querySelector('h2').innerHTML = 'JavaScript로 변경한 제목';
+
+            let items = document.getElementsByClassName('item');
+
+            for(let i=0; i<items.length; i++){
+                let item = items[i];
+                item.style.color = 'red';
+            }
+
+            let messages = document.getElementsByName('message');
+
+            for(let i=0; i<messages.length; i++){
+                let message = messages[i];
+                message.style.background = 'yellow';
+            }
+            
+            let p1 = document.querySelectorAll('p');
+
+            for(let i=0; i<p1.length; i++){
+                let p = p1[i];
+                p.style.fontWeight = 'bold';
+            }
+            
+        };
+    </script>
+</head>
+<body>
+    <h1 id="title">DOM 선택 실습</h1>
+    <h2>기존 제목</h2>
+
+    <p class="item">첫 번째 항목</p>
+    <p class="item">두 번째 항목</p>
+    <p class="item">세 번째 항목</p>
+
+    <p name="message">안녕하세요!</p>
+    <p name="message">JavaScript 실습입니다.</p>
+</body>
+</html>
