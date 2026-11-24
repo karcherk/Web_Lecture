@@ -5,9 +5,48 @@ body {
     font-family:'Malgun Gothic',sans-serif;
 }
 .header{
+    position: relative;
     border-bottom: 1px solid black;
-    padding-top:30px;
+    padding-top:10px;
 
+}
+.search-box {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    
+}
+
+#search-input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 6px 4px;
+    font-size: 13px;
+    width: 180px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-bottom: 2px solid black;
+}
+
+#search-btn {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+#search-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+#slider-area{
+    position: absolute;
+    top: 220px;
+    right: 10px;
 }
 .menu{
     overflow: hidden;

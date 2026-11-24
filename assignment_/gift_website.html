@@ -5,9 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="script.css">
     <title>선물 추천</title>
+    <script>
+        window.onload = function() {
+            let menuItems = document.querySelectorAll(".menu-item");
+            let title = document.querySelector("#title");
+            let sliderArea = document.querySelector("#slider-area");
+            let currentMenu = "전체";
+
+            menuItems[0].style.fontWeight = "bold";
+
+            for (let i = 0; i < menuItems.length; i++) {
+                let item = menuItems[i];
+
+                item.addEventListener("mouseover", function() {
+                    item.style.fontWeight = "bold";
+                });
+
+                item.addEventListener("mouseout", function() {
+                    if (item.textContent !== currentMenu) {
+                        item.style.fontWeight = "normal";
+                    }
+                });
+
+               
+                item.addEventListener("click", function() {
+                    currentMenu = item.textContent;
+
+                    
+                    for (let j = 0; j < menuItems.length; j++) {
+                        menuItems[j].style.fontWeight = "normal";
+                    }
+                    item.style.fontWeight = "bold";
+
+                    
+                    if (currentMenu === "전체") {
+                        title.textContent = "🔥실시간 전체 인기선물 TOP 6";
+                        sliderArea.style.display = "none";
+                    } else {
+                        title.textContent = "🎁 " + currentMenu + " 추천 선물";
+                        sliderArea.style.display = "block";
+                    }
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="header">    
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="선물 검색...">
+            <button id="search-btn">검색</button>
+        </div>
         <h1>Gifty</h1>
         <p>상황에 맞는 다양하고 감각적인 선물</p>
         <div class="menu">
@@ -20,7 +68,12 @@
     </div>
 
     <div class="container">
-        <h2>🔥실시간 전체 인기선물 TOP 6</h2>
+        <h2 id="title">🔥실시간 전체 인기선물 TOP 6</h2>
+        <div id="slider-area" style="display: none; margin-bottom: 20px;">
+            최대 예산: <input type="range" id="price-slider" min="10000" max="200000" step="10000" value="200000">
+            <span id="price-val">200,000원 이하</span>
+        </div>
+        </div>
         <div class="main_01">
             <div class="main-item">
                 <h3>1위</h3>
